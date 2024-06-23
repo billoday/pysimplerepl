@@ -10,3 +10,8 @@ class InvalidFlag(ValueError):
 
 class InsufficientArgsError(Exception):
     pass
+
+
+
+class CommandNotFoundError(Exception):
+    pass

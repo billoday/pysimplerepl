@@ -1,5 +1,6 @@
 from pysimplerepl.models.exceptions import InvalidFlag
 from pysimplerepl.models.exceptions import InsufficientArgsError
+from pysimplerepl.models.exceptions import CommandNotFoundError
 from unittest import TestCase
 
 class InvalidFlagTests(TestCase):
@@ -38,4 +39,11 @@ class InsufficientArgsErrorTest(TestCase):
     def test_insufficient_args_error(self):
         with self.assertRaises(InsufficientArgsError) as err:
             raise InsufficientArgsError
+        self.assertIsInstance(err.exception, Exception)
+
+
+class CommandNotFoundErrorTest(TestCase):
+    def test_command_not_found_error(self):
+        with self.assertRaises(CommandNotFoundError) as err:
+            raise CommandNotFoundError
         self.assertIsInstance(err.exception, Exception)
