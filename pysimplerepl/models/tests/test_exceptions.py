@@ -1,4 +1,5 @@
 from pysimplerepl.models.exceptions import InvalidFlag
+from pysimplerepl.models.exceptions import InsufficientArgsError
 from unittest import TestCase
 
 class InvalidFlagTests(TestCase):
@@ -31,3 +32,10 @@ class InvalidFlagTests(TestCase):
             expected_message,
             str(err.exception)
         )
+
+
+class InsufficientArgsErrorTest(TestCase):
+    def test_insufficient_args_error(self):
+        with self.assertRaises(InsufficientArgsError) as err:
+            raise InsufficientArgsError
+        self.assertIsInstance(err.exception, Exception)

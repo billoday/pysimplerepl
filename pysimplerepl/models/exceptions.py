@@ -6,3 +6,7 @@ class InvalidFlag(ValueError):
         if message is None:
             message = 'invalid flag'
         super().__init__(message, *args)
+
+
+class InsufficientArgsError(Exception):
+    pass
