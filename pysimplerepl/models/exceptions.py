@@ -8,9 +8,12 @@ class InvalidFlag(ValueError):
         super().__init__(message, *args)
 
 
-class InsufficientArgsError(Exception):
+class FlagNeedsArgumentError(Exception):
     pass
 
+
+class InsufficientArgsError(Exception):
+    pass
 
 
 class CommandNotFoundError(Exception):
